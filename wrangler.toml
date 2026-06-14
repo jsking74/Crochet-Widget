@@ -1,0 +1,13 @@
+# Cloudflare config for this app, served as static assets.
+# Works with the dashboard "Workers" Builds flow and with the CLI:
+#   cd crochet-app && npm run build && npx wrangler deploy
+#
+# It's still just static files (the same dist/ runs on any web server), so
+# nothing here locks you in.
+name = "crochet-pattern-generator"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./dist"
+# Serve index.html for unknown routes (single-page-app fallback).
+not_found_handling = "single-page-application"
